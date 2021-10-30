@@ -1,28 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World'
+    return render_template('index.html')
 
-@app.route('/dojo')
-def success():
-  return "Dojo!"
-
-@app.route('/say/<name>')
-def hello(name):
-    print (name)
-    return 'Hi ' +name +'!'
-
-@app.route('/repeat/<int:times>/<word>')
-def repeat(times,word):
-    i = 0
-    words = ()
-    while i < times:
-        print(word)
-        times -= 1
-    return word
-
+@app.route('/datas/<int:times>/<string:word>')
+def datas(times, word):
+    return render_template('datas.html',times = times, word = word)
 
 
 if __name__=="__main__":
