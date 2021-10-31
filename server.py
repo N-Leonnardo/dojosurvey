@@ -5,9 +5,9 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
-@app.route('/datas/<int:times>/<string:word>')
-def datas(times, word):
-    return render_template('datas.html',times = times, word = word)
+@app.route('/datas/<int:num>/')
+def datas(num):
+    return render_template('datas.html',num = num)
 
 
 if __name__=="__main__":
