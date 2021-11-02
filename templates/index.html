@@ -5,8 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Flask</title>
+    <style>
+        body{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello Flask</h1>
-</body>
+    <h1>Index Page</h1>
+    <h3>Create a User</h3>
+    <form action='/users' method='post'>
+        <label for='name'>Name:</label>
+        <input type='text' name='name'>
+        <label for='location'>Dojo Location</label>
+        <select name = 'location'>
+            <option value="CH">Chicago</option>
+            <option value="SE">Seatle</option>
+            <option value="ON">Online</option>
+            <option value="CA">California</option>
+        </select>
+        <label for="language">Favorite Language</label>
+        <select name = 'language'>
+            <option value="Python">Python</option>
+            <option value="Java Script">Java Script</option>
+        </select>
+        <label for="message">Message</label>
+        <input type="text" name = message>
+        <input type='submit' value='create user'>
+    </form> 
 </html>
